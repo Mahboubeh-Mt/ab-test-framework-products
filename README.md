@@ -36,6 +36,23 @@ the change is considered effective and can be rolled out.
 -  **Statistical Foundations:** two-proportion z-test + bootstrap confidence intervals  
 -  **Lightweight & Reproducible:** no external frameworks, runs anywhere with Python 3.12+
 
+## Guardrail Metrics
+
+In addition to testing purchase conversion, the framework supports optional guardrail metrics to ensure that improvements in one area don’t harm others.
+
+Examples include:
+
+- AOV (Average Order Value) – ensures users aren’t just buying cheaper products.
+
+- Refund Rate – detects if returns increase after a change.
+ Bounce Rate – checks if users are leaving the site faster.
+
+These act as safety checks:
+
+Even if Version B increases purchases, it will not be rolled out if a guardrail metric worsens.
+
+This helps maintain a balance between conversion growth, revenue quality, and user experience.
+
 ## Quickstart
 ```bash
 # 0) install
