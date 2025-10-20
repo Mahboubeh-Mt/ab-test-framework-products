@@ -15,6 +15,20 @@ It simulates experiments, runs statistical analysis (two-proportion z-test + boo
 - **Statistical rigor:** difference in proportions, p-values, 95% bootstrap CIs  
 - **Engineering discipline:** clear structure, tests, linting, CI
 
+## Experiment Context
+
+The goal was to increase product purchases on the Gerdoo e-commerce platform.
+
+- **Version A (Control)**: current product page, layout, or pricing
+
+- **Version B (Treatment)**
+
+Users are randomly split into two groups so both versions are tested under the same conditions.
+The key metric is purchase conversion rate = (number of purchases ÷ number of visitors).
+
+If Version B’s conversion rate is statistically higher than Version A’s,
+the change is considered effective and can be rolled out.
+
 ## Highlights
 -  **Full Experimentation Cycle:** hypothesis → data → statistical validation → visual insights  
 -  **Scalable & Modular:** clear separation of data generation, analysis, and visualization  
