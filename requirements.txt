@@ -6,3 +6,4 @@ matplotlib
 statsmodels
 pytest
 ruff
+pytest-cov
