@@ -7,6 +7,7 @@ import pandas as pd
 
 from .analyze_ab import analyze
 
+
 def plot_ctr_with_ci(df: pd.DataFrame, out_path: str = "outputs/figures/ab_ctr.png") -> str:
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
@@ -20,11 +21,14 @@ def plot_ctr_with_ci(df: pd.DataFrame, out_path: str = "outputs/figures/ab_ctr.p
     plt.ylabel("Conversion Rate (%)")
     plt.title("A/B Test – Conversion Rates")
 
-    # Subtitle-style annotation
-    subtitle = (
-        f"Lift: {stats.abs_lift * 100:.2f} pp "
-        f"(p={stats.p_value:.3g}; 95% CI: {stats.ci_low_pp * 100:.2f}–{stats.ci_high_pp * 100:.2f} pp)"
-    )
+    # Keep code lines <= 100 chars
+    subtitle_parts = [
+        f"Lift: {stats.abs_lift * 100:.2f} pp",
+        f"(p={stats.p_value:.3g};",
+        "95% CI:",
+        f"{stats.ci_low_pp * 100:.2f}–{stats.ci_high_pp * 100:.2f} pp)",
+    ]
+    subtitle = " ".join(subtitle_parts)
     plt.suptitle(subtitle, y=0.97, fontsize=9)
 
     plt.tight_layout()
