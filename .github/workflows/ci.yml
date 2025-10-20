@@ -24,6 +24,12 @@ jobs:
         run: |
           ruff --version
           ruff check .
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage.xml
+          flags: unittests
+          fail_ci_if_error: true
 
       - name: Test (pytest)
         run: |
